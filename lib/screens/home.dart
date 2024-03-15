@@ -60,6 +60,7 @@ class _HomeViewState extends State<HomeView> {
           color: Colors.transparent,
           maxHeight: MediaQuery.of(context).size.height - 80,
           panel: Container(
+            clipBehavior: Clip.hardEdge,
             decoration: BoxDecoration(
                 color: Colors.redAccent,
                 border: Border.all(
@@ -72,7 +73,9 @@ class _HomeViewState extends State<HomeView> {
                 )),
             child: TaskList()
           ),
-          body: MapView()
+          body: ScaffoldMessenger(
+            child: Mapper()
+          )
         ),
     );
   }

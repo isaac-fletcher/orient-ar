@@ -44,15 +44,12 @@ class _TaskListState extends State<TaskList> {
               )
             )
           ),
-          Container(
-            alignment: Alignment.topCenter,
-            child: Padding(
+          Padding(
               padding: const EdgeInsets.all(16.0),
               child: CupertinoSearchTextField(
                 controller: textController,
                 placeholder: 'Search',
               ),
-            ),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

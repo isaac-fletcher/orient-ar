@@ -8,6 +8,9 @@ class SelectedTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return (CupertinoPageScaffold(
+      // navigationBar: CupertinoNavigationBar(
+        
+      // ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
@@ -33,7 +36,7 @@ class SelectedTask extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: IconButton(
                     icon: const Icon(CupertinoIcons.back, size: 30),
-                    color: CupertinoColors.black,
+                    color: CupertinoColors.white,
                     onPressed: () {
                       // go back to previous page
                       Navigator.pop(context);

@@ -25,14 +25,14 @@ class TaskCard extends StatelessWidget {
             width: 50,
             height: 25,
             decoration: BoxDecoration(
-              color: CupertinoColors.systemRed,
+              color: CupertinoColors.activeBlue,
               border: Border.all(
-                color: CupertinoColors.systemRed,
+                color: CupertinoColors.activeBlue,
               ),
             borderRadius: BorderRadius.circular(4.0),
             ),
             child: const Center(
-              child: Text('700', style: TextStyle(fontSize: 18.0, color: CupertinoColors.black))
+              child: Text('700', style: TextStyle(fontSize: 18.0, color: CupertinoColors.white))
             ),
           ),
           const Padding(padding: EdgeInsetsDirectional.only(end: 20.0)),
