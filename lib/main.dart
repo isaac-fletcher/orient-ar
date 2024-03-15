@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
 import 'screens/selected-task.dart';
 import 'screens/task-list.dart';
+import 'screens/home.dart';
 
 void main() {
   runApp(const MainApp());
@@ -23,7 +24,7 @@ class MainApp extends StatelessWidget {
               )
         ),
       ),
-      home: TaskList(),                    
+      home: HomeView(),                    
     )
     ;
   }
