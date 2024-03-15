@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:orientation/screens/leader.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import './task-list.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -34,7 +36,12 @@ class _HomeViewState extends State<HomeView> {
                 CupertinoButton(
                   padding: EdgeInsets.zero,
                   child: const Icon(CupertinoIcons.star_fill),
-                  onPressed: () {},
+                  onPressed: () { 
+                    Navigator.push(
+                      context,
+                      CupertinoPageRoute(builder: (context) => LeaderboardScreen())
+                    );
+                  },
                 )
               ]),
             ),
@@ -56,17 +63,7 @@ class _HomeViewState extends State<HomeView> {
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 )),
-            child: const Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Center(
-                  child: Text("No Active Task", style: TextStyle(fontSize: 28)),
-                )
-              ],
-            ),
+            child: TaskList()
           ),
           body: const Center(
             child: Text(

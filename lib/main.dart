@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
+import 'package:orientation/screens/login.dart';
 import 'screens/selected-task.dart';
 import 'screens/task-list.dart';
 import 'screens/home.dart';
@@ -24,7 +25,7 @@ class MainApp extends StatelessWidget {
               )
         ),
       ),
-      home: HomeView(),                    
+      home: LoginPage(),                    
     )
     ;
   }
