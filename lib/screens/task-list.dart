@@ -34,10 +34,10 @@ class _TaskListState extends State<TaskList> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
           Container (
-            padding: const EdgeInsets.only(top: 40.0),
+            padding: const EdgeInsets.only(top: 20.0),
             alignment: Alignment.topCenter,
             child: const Text(
-              "Objective List",
+              "Task List",
               style: TextStyle (
                 fontSize: 32,
                 color: CupertinoColors.black,

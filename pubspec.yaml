@@ -27,4 +27,4 @@ flutter:
   assets:
     - assets/
     - assets/img/
-    - assets/data
+    - assets/data/

@@ -23,56 +23,55 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   @override
-  Widget build(BuildContext context) 
-  {
+  Widget build(BuildContext context) {
     return CupertinoPageScaffold(
-      child: Column(
-        children: <Widget>[
-          Text('CampusQuest'),
-          Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ListView( // Using ListView to avoid overflow on smaller devices
-            shrinkWrap: true,
-            children: [
-              SizedBox(
-                height: MediaQuery.of(context).size.height * 0.3, // Adjust the size to 30% of the screen height
-                child: Image.asset('assets/img/static-paw-003940-c_orange_1.jpg', fit: BoxFit.contain),
-              ),
-              CupertinoTextField(
-                controller: _usernameController,
-                placeholder: 'Username',
-                style: const TextStyle(color: Colors.black),
-              ),
-              CupertinoTextField(
-                controller: _passwordController,
-                placeholder: 'Password',
-                style: const TextStyle(color: Colors.black),
-                obscureText: true,
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: _login,
-                child: const Text('Sign in', style: TextStyle(color: Colors.black)),
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                ),
-              ),
-              const SizedBox(height: 20), 
-              Center( // Wrap with Center to align to the middle
-                child: GestureDetector(
-                  onTap: () {
-                    // Add your logic for "Forget password" here
-                  },
-                  child: const Text(
-                    'Forget password?',
-                    style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+      child: SafeArea(
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column( // Using ListView to avoid overflow on smaller devices
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.3, // Adjust the size to 30% of the screen height
+                    child: Image.asset('assets/img/static-paw-003940-c_orange_1.jpg', fit: BoxFit.contain),
                   ),
-                ),
-              ),
+                  CupertinoTextField(
+                    controller: _usernameController,
+                    placeholder: 'Username',
+                    style: const TextStyle(color: Colors.black),
+                  ),
+                  CupertinoTextField(
+                    controller: _passwordController,
+                    placeholder: 'Password',
+                    style: const TextStyle(color: Colors.black),
+                    obscureText: true,
+                  ),
+                  const SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: _login,
+                    child: const Text('Sign in', style: TextStyle(color: Colors.black)),
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+                    ),
+                  ),
+                  const SizedBox(height: 20), 
+                  Center( // Wrap with Center to align to the middle
+                    child: GestureDetector(
+                      onTap: () {
+                        // Add your logic for "Forget password" here
+                      },
+                      child: const Text(
+                        'Forget password?',
+                        style: TextStyle(color: Colors.black, decoration: TextDecoration.underline),
+                      ),
+                    ),
+                  ),
+                ]
+              )
+            )
             ],
           ),
-        ),
-        ]
       )
     );
   }

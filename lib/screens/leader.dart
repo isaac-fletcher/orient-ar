@@ -5,6 +5,8 @@ import 'dart:io'; // Add this import statement
 import 'package:orientation/widgets/player-card.dart';
 
 class LeaderboardScreen extends StatelessWidget {
+  final String _playerImagePath = 'assets/img/profilepic.jpg';
+
   @override
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
@@ -25,9 +27,9 @@ class LeaderboardScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                PlayerCard(rank: 2, name: 'John Doe', score: 9999,imagePath: 'assets\img\profilepic.jpg'),
-                PlayerCard(rank: 1, name: 'Mr Mills', score: 10000,imagePath: 'assets\img\profilepic.jpg'),
-                PlayerCard(rank: 3, name: 'Alice Johnson', score: 9998,imagePath: 'assets\img\profilepic.jpg'),
+                PlayerCard(rank: 2, name: 'John Doe', score: 9999,imagePath: _playerImagePath),
+                PlayerCard(rank: 1, name: 'Mr Mills', score: 10000,imagePath: _playerImagePath),
+                PlayerCard(rank: 3, name: 'Alice Johnson', score: 9998,imagePath: _playerImagePath),
               ],
             ),
             SizedBox(height: 20.0),
@@ -38,9 +40,7 @@ class LeaderboardScreen extends StatelessWidget {
                     final playerRank = index + 4;
                     final playerName = 'Player $playerRank';
                     final playerScore = 1000 - (index * 10); // Generate scores from 1000 to 750
-                    final playerImagePath = 'assets\img\profilepic.jpg'; // Replace with actual image path
-
-
+                     
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 25.0),
                       child: Row(

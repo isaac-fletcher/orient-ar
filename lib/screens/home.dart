@@ -71,11 +71,9 @@ class _HomeViewState extends State<HomeView> {
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 )),
-            child: TaskList()
+            child: const TaskList()
           ),
-          body: ScaffoldMessenger(
-            child: Mapper()
-          )
+          body: const Mapper()
         ),
     );
   }

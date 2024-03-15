@@ -16,17 +16,18 @@ class Mapper extends StatefulWidget {
 
 class _MapViewState extends State<Mapper> {
   final CameraPosition _initialLocation =
-      const CameraPosition(target: LatLng(34.67833, -82.83917));
+      const CameraPosition(target: LatLng(34.67833, -82.83917), zoom: 15.5);
   late GoogleMapController mapController;
 
   late String _mapStyleString = "";
-
-  final Completer<GoogleMapController> _controller = Completer();
 
   bool _mapCreated = false;
 
   @override
   void initState() {
+    rootBundle.loadString('assets/data/map_style.json').then((string) {
+      _mapStyleString = string;
+    });
     super.initState();
   }
 
@@ -35,7 +36,7 @@ class _MapViewState extends State<Mapper> {
     setState(() {
       _mapCreated = true;
     });
-     
+    
   }
 
   @override
@@ -49,7 +50,7 @@ class _MapViewState extends State<Mapper> {
             myLocationEnabled: true,
             mapType: MapType.normal,
             zoomGesturesEnabled: true,
-            //style: _mapStyleString,
+            style: _mapStyleString,
           ),
           if (!_mapCreated) const Center(child: CircularProgressIndicator())
         ]
