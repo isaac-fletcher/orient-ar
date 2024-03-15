@@ -2,15 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class SelectedObject extends StatefulWidget {
-  const SelectedObject({super.key});
-
-  @override
-  State<SelectedObject> createState() => _SelectedObjectState();
-}
-
-class _SelectedObjectState extends State<SelectedObject> {
-  final ScrollController _posController = ScrollController();
+class SelectedTask extends StatelessWidget {
+  const SelectedTask({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,22 +26,35 @@ class _SelectedObjectState extends State<SelectedObject> {
                     )
                 )
             ),
-            child: const Center(
-              child: Text(
-                'Find Cooper Library',
-                textDirection: TextDirection.ltr,
-                style: TextStyle (
-                  fontSize: 32,
-                  color: CupertinoColors.white,
-                )
-              ),
-            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: IconButton(
+                    icon: const Icon(CupertinoIcons.back, size: 30),
+                    color: CupertinoColors.black,
+                    onPressed: () {
+                      // go back to previous page
+                      Navigator.pop(context);
+                    },
+                  ),
+                ),
+                const Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    'Find Cooper Library',
+                    style: TextStyle (
+                      fontSize: 32,
+                      color: CupertinoColors.white,
+                    )
+                  ),
+                ),
+              ]
+            )
           ),
-          CupertinoScrollbar(
-            thumbVisibility: true,
-            controller: _posController,
+          Expanded(
             child: ListView(
-              controller: _posController,
               shrinkWrap: true,
               children: <Widget>[
                 Container(
@@ -58,7 +64,6 @@ class _SelectedObjectState extends State<SelectedObject> {
                   margin: const EdgeInsets.all(20),
                   child: const Text(
                     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    textDirection: TextDirection.ltr,
                     style: TextStyle (
                       fontSize: 16,
                       color: CupertinoColors.black,
@@ -74,7 +79,7 @@ class _SelectedObjectState extends State<SelectedObject> {
                 )               
               ]  
             )
-          )             
+          )           
         ],
       ),
     )
