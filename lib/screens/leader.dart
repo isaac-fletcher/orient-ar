@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'dart:io'; // Add this import statement
-import '../widgets/player-card.dart';
+import 'package:orientation/widgets/player-card.dart';
 
 class LeaderboardScreen extends StatelessWidget {
   @override

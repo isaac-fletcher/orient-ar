@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import '../widgets/task-card.dart';
+import 'package:orientation/widgets/task-card.dart';
 
 class TaskList extends StatefulWidget {
   const TaskList({super.key});

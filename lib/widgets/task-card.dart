@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
-import '../screens/selected-task.dart';
+import 'package:orientation/screens/selected-task.dart';
 
 class TaskCard extends StatelessWidget {
   const TaskCard({super.key});

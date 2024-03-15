@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:orientation/screens/leader.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import './task-list.dart';
+import 'package:orientation/screens/task-list.dart';
+import 'package:orientation/screens/map.dart';
+import 'package:orientation/screens/store.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -31,7 +33,12 @@ class _HomeViewState extends State<HomeView> {
                 CupertinoButton(
                   padding: EdgeInsets.zero,
                   child: const Icon(CupertinoIcons.shopping_cart),
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navigator.push(
+                    //   context,
+                    //   CupertinoPageRoute(builder: (context) => Store())
+                    // );
+                  },
                 ),
                 CupertinoButton(
                   padding: EdgeInsets.zero,
@@ -65,12 +72,8 @@ class _HomeViewState extends State<HomeView> {
                 )),
             child: TaskList()
           ),
-          body: const Center(
-            child: Text(
-              "Map here",
-              style: TextStyle(color: Colors.white),
-            ),
-          )),
+          body: MapView()
+        ),
     );
   }
 }
