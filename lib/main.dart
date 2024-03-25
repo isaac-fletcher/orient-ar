@@ -19,14 +19,9 @@ class MainApp extends StatelessWidget {
       theme: CupertinoThemeData(
         primaryColor: CupertinoColors.activeBlue,
         textTheme: CupertinoTextThemeData(
-            textStyle: TextStyle(
-                fontSize: 14,
-                color: CupertinoColors.black
-              )
-        ),
+            textStyle: TextStyle(fontSize: 14, color: CupertinoColors.black)),
       ),
-      home: LoginPage(),                    
-    )
-    ;
+      home: LoginPage(),
+    );
   }
 }
