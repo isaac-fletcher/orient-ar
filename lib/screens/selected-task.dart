@@ -5,15 +5,21 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:orientation/screens/map.dart';
 
 class SelectedTask extends StatelessWidget {
-  final LatLng destination; // accept the destination coordinates
-  const SelectedTask(
-      {super.key,
-      required this.destination}); // the constructor to accept the destination
 
-  final String _taskName = "Find Cooper Library";
-  final String _taskDescription =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-  final String _taskImg = "assets/img/cooper2.jpg";
+  final LatLng coordinates; // accept the destination coordinates
+  final String taskName; //= "Find Cooper Library";
+  final String taskDescription;//= "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+  final String taskImg; //= "assets/img/cooper2.jpg";
+
+  const SelectedTask(
+    {
+      super.key,
+      required this.coordinates,
+      required this.taskName,
+      required this.taskDescription,
+      required this.taskImg
+    }
+  ); // the constructor to accept the destination
 
   void activateTask() {
     return;
@@ -34,7 +40,7 @@ class SelectedTask extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                   color: CupertinoColors.black.withOpacity(1),
                   image: DecorationImage(
-                      image: AssetImage(_taskImg),
+                      image: AssetImage(taskImg),
                       fit: BoxFit.fill,
                       colorFilter: ColorFilter.mode(
                         CupertinoColors.black.withOpacity(0.5),
@@ -54,7 +60,7 @@ class SelectedTask extends StatelessWidget {
                 ),
                 Align(
                   alignment: Alignment.center,
-                  child: Text(_taskName,
+                  child: Text(taskName,
                       style: const TextStyle(
                         fontSize: 32,
                         color: CupertinoColors.white,
@@ -68,7 +74,7 @@ class SelectedTask extends StatelessWidget {
                 height: 400,
                 width: double.infinity,
                 margin: const EdgeInsets.all(20),
-                child: Text(_taskDescription,
+                child: Text(taskDescription,
                     style: const TextStyle(
                       fontSize: 16,
                       color: CupertinoColors.black,
@@ -81,7 +87,7 @@ class SelectedTask extends StatelessWidget {
                       context,
                       CupertinoPageRoute(
                           builder: (context) =>
-                              Mapper(destination: destination)),
+                              Mapper(destination: coordinates)),
                     );
                   },
                   child: const Text("Activate Task"),

@@ -6,21 +6,25 @@ import 'package:orientation/screens/selected-task.dart';
 import 'package:orientation/screens/map.dart';
 
 class TaskCard extends StatelessWidget {
-  const TaskCard({super.key});
 
-  // Example list of destinations -
-  static final List<LatLng> destinations = [
-    LatLng(34.93444, -81.02444), //Tillman Hall
-    LatLng(34.67861, -82.84306), //Clemson Memorial Stadium
-    LatLng(34.675556, -82.8345), // McAdams Hall
-    LatLng(34.679333, -82.835194), //Strode Hall
-    LatLng(
-        34.680306, -82.834694), // Willbur O and Ann Power College of Business
-    LatLng(34.676639, -82.836444), //Cooper Library
-    LatLng(
-        34.675389, -82.839361), //Fluor Daniel Engineering Innovation Building
-    LatLng(34.676139, -82.838) //Freeman Hall
-  ];
+  final LatLng coordinates; 
+  final String destination; 
+  final String taskName; 
+  final String taskDescription;
+  final String taskImg;
+  final int value;
+
+  const TaskCard(
+    {
+      super.key,
+      required this.destination,
+      required this.coordinates,
+      required this.taskName,
+      required this.taskDescription,
+      required this.taskImg,
+      required this.value,
+    }
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +33,13 @@ class TaskCard extends StatelessWidget {
         Navigator.push(
           context,
           CupertinoPageRoute(
-              builder: (context) => SelectedTask(destination: destinations[0])),
+            builder: (context) => SelectedTask(
+              coordinates: coordinates,
+              taskName: destination,
+              taskDescription: taskDescription,
+              taskImg: taskImg
+            )
+          ),
         );
       },
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
@@ -48,24 +58,24 @@ class TaskCard extends StatelessWidget {
               ),
               borderRadius: BorderRadius.circular(4.0),
             ),
-            child: const Center(
-                child: Text('700',
-                    style: TextStyle(
+            child: Center(
+                child: Text(value.toString(),
+                    style: const TextStyle(
                         fontSize: 18.0, color: CupertinoColors.white))),
           ),
           const Padding(padding: EdgeInsetsDirectional.only(end: 20.0)),
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text('Task Name',
-                  style: TextStyle(
+              Text(taskName,
+                  style: const TextStyle(
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                       color: CupertinoColors.black)),
-              Text('Location',
+              Text(destination,
                   style:
-                      TextStyle(fontSize: 16.0, color: CupertinoColors.black)),
+                      const TextStyle(fontSize: 16.0, color: CupertinoColors.black)),
             ],
           ),
           const Spacer(),
