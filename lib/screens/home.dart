@@ -6,7 +6,7 @@ import 'package:orientation/screens/leader.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:orientation/screens/task-list.dart';
 import 'package:orientation/screens/map.dart';
-import 'package:orientation/screens/store.dart';
+import 'package:orientation/screens/rewards.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -38,10 +38,10 @@ class _HomeViewState extends State<HomeView> {
                   padding: EdgeInsets.zero,
                   child: const Icon(CupertinoIcons.shopping_cart),
                   onPressed: () {
-                    // Navigator.push(
-                    //   context,
-                    //   CupertinoPageRoute(builder: (context) => Store())
-                    // );
+                     Navigator.push(
+                       context,
+                       CupertinoPageRoute(builder: (context) => RewardsScreen())
+                     );
                   },
                 ),
                 CupertinoButton(
